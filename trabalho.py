@@ -1,4 +1,3 @@
-# Importando duas ferramentas úteis para trabalhar com dados e gráficos
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -40,6 +39,10 @@ plt.pie(sobreviventes, labels=labels, autopct='%1.1f%%', startangle=90)
 plt.axis('equal')
 plt.title('Porcentagem de Sobreviventes e Não Sobreviventes')
 plt.show()
+
+# Convertendo 'age' e 'fare' para tipo numérico
+df['age'] = pd.to_numeric(df['age'], errors='coerce')
+df['fare'] = pd.to_numeric(df['fare'], errors='coerce')
 
 # Fazendo um gráfico que mostra a relação entre a idade e o preço pago (tarifa)
 plt.scatter(df['age'], df['fare'], alpha=0.5)
